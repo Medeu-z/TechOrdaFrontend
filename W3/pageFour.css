@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Permanent+Marker&display=swap');
+:root{
+    --primary-color: #344A72;
+    --secondary-color: #ffffff;
+    --accent-color:  #E5E5E5;
+    --primary-font-family: 'Montserrat', sans-serif;
+    --logo-font-family: 'Permanent Marker';
+}
+*{
+    font-family: var(--primary-font-family);
+    box-sizing: border-box;
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: var(--accent-color);
+}
+header, footer{
+    background-color: var(--primary-color);
+    width: 100%;
+}
+.wrapper{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+.logo{
+    font-size: 36px;
+    font-family: var(--logo-font-family);
+    color: #ffffff;
+}
+header{
+    position: fixed;
+    height: 60px;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+.content{
+    margin: 100px auto;
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+aside{
+    position: sticky;
+    top: 100px;
+    right: 5%;
+    z-index: 2;
+    width: 35%;
+    height: 45%;
+    background-color:  white;
+    border-radius: 10px;
+    padding: 0 5% 5% 5%;
+} 
+aside > details{
+    margin-bottom: 5%;
+}
+details > ul{
+    list-style: none;
+}
+details > ul li{
+   margin-bottom: 5%;
+}
+main{
+   width: 80%
+}
+.card{
+    width: 100%;
+    
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    margin: 0 0 5%;
+    padding: 5%;
+}
+.card__header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3%;
+    font-size: 1.5vw;
+}
+.user{
+    display: flex;
+}
+.user > i{
+    color: var(--primary-color);
+    margin-right: 5%;
+}
+.card__body{
+    margin-bottom: 5%;
+}
+.card__title{
+    font-size: 2vw;
+}
+.card__direction{
+    list-style: none;
+    display: flex;
+    margin-left: -7%;
+    margin-top: -1%;
+    font-size: 1.2vw;
+}
+.card__description{
+    max-width: 60%;
+    font-size: 1vw;
+}
+.card__job{
+    max-width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.card__job > div{
+    font-size: 1vw;
+    color: white;
+    padding: 2%;
+    border-radius: 15px;
+    margin-right: 2%;
+}
+.card__job > div:nth-child(3n+1){
+    background: #4A8E48;
+}
+.card__job > div:nth-child(3n+2){
+    background: #AC5A5A;
+}
+.card__job > div:nth-child(3n+3){
+    background: #8B53A6;
+}
+.card__skills{
+    font-size: 1.2vw;
+}
+.card__footer{
+    display: flex;
+    justify-content: end;
+}
+.card__button{
+    font-size: 1vw;
+    border: 0;
+    background: #344A72;
+    color: white;
+    padding: 1% 3%;
+    border-radius: 10px;
+}
+footer{
+    position: relative;
+    bottom: 0;
+    height: 200px;
+}
+@media screen and (max-width: 700px){
+    .content{
+        flex-direction: column;
+    }
+    aside, main{
+        width: 100%;
+        margin: 0 auto;
+    }
+    aside{
+        position: static;
+        margin-bottom: 5%;
+        font-size: 3vw;
+    }
+    .card__header{
+        font-size: 3vw;
+    }
+    .card__title{
+        font-size: 3.7vw;
+    }
+    .card__direction, .card__skills{
+        font-size: 2.7vw;
+    }
+    .card__description, .card__job > div, .card__button{
+        font-size: 2.4vw;
+    }
+}

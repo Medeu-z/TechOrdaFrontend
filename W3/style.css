@@ -1,0 +1,76 @@
+body, html {
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+* {
+    font-family: 'Lato', sans-serif;
+    color: #333;
+}
+main{
+    padding: 5% 0;
+    display: flex;
+    justify-content: center;
+}
+.shadow-box{
+    width: 400px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 10%);
+}
+fieldset{
+    margin-left: -10px;
+    border: 0px;
+    
+}
+input{
+    border: 1px solid #dbdbdb;
+    padding: 10px;
+    border-radius: 5px;
+}
+.input_rules{
+    color: rgb(133, 132, 132);
+    font-size: 13px;
+    padding: 1px;
+}
+.input_rules::before{
+   content: "*";
+   color: rgb(204, 23, 23);
+   font-size: 15px;
+}
+label{
+    margin: 15px 0 3px 0;
+}
+.userInfo{
+    display: flex;
+    flex-direction: column;
+}
+.userGender{
+    margin-top: 15px;
+    display: flex;
+    align-items: flex-start;
+  
+}
+.userGender label{
+    margin: 0 15px 0 0;
+}
+.receive_email{
+    margin-top: 15px;
+    display: flex;
+    align-items: flex-start;
+}
+.receive_email label{
+    margin: 0;
+}
+.button{
+    margin-top: 15px;
+    background-color: #558cb7;
+    padding: 10px 0;
+    border-radius: 5px;
+    border: 0px;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: #fff;
+    font-size: 15px;
+}

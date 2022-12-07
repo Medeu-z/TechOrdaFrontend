@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Main Page</title>
+    <style>
+        table{
+            border-collapse: collapse;
+            width: 70%;
+            background-color: white;
+        }
+        td,th{
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        tr > th{
+            color: #558cb7;
+        }
+        th ~ td{
+            padding-left: 50px;
+        }
+        #linkContainer{
+            padding: 16px;
+        }
+        #link{
+            transition: all 0.3s;
+        }
+        td a:hover{
+           display: inline-block;
+           padding: 8px;
+           text-decoration: none;
+           background-color: #558cb7;
+           color: white;
+        }
+    </style>
+</head>
+<body style="color: #558cb7">
+    <main>
+        <table style="box-shadow: 0 2px 4px 0 rgb(0 0 0 / 10%);">
+            <tr>
+                <th>Name:</th>
+                <td>Medeuova Zhaniya</td>
+            </tr>
+            <tr>
+                <th>Email:</th>  
+                <td>medeuovazhaniya@gmail.com</td>      
+            </tr>  
+            <tr>
+                <th>Phone:</th>
+                <td>87771234567</td>
+            </tr>
+            <tr>
+                <th>Favorite cartoons:</th>
+                <td>
+                    <ol>
+                        <li>Неисправимый Рон</li>
+                        <li>Душа</li>
+                        <li>Камуфляж и шпионаж</li>
+                    </ol>
+                </td>
+            </tr>
+            <tr>
+                <th>Hobbies:</th>
+                <td>
+                    <ul>
+                        <li>Drawing</li>
+                        <li>Coding</li>
+                        <li>Studying</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Favorite food</th>
+                <td>
+                    <dl>
+                        <dt>Cheesecake</dt>
+                        <dd>Mexican Chocolate Cheesecake</dd>
+                        <dt>Tea</dt>
+                        <dd>Black tea without sugar</dd>
+                    </dl>
+                </td>
+            </tr>
+            <tr>
+                <th id="linkContainer">HW3: Часть-2</th>
+                <td>
+                    <a id="link" href="./pageFour.html">Page 4</a>
+                </td>
+            </tr>
+        </table> 
+    </main>
+</body>
+</html>

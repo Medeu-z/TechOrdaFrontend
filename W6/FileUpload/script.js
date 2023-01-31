@@ -7,8 +7,8 @@ let files__name__div;
 let msg__div;
 let uploadedFilesName = [];
 const messages = {
-    success: "file uploaded successfully.",
-    error: "Can't upload file!"
+    success: "All files uploaded!",
+    error: "You did not select a file to upload."
 }
 function declare(){
     open__container = document.querySelector("#open__container");
@@ -20,6 +20,10 @@ function declare(){
     files__name__div = document.querySelector(".body");
 }
 declare();
+function showMsg(text, err = false){
+    msg__div.style.color = err ? "darkred" : "green";
+    msg__div.innerText = text;
+}
 function showFilesName(parent, texts, index){
     if(texts.length !== 0){
         texts.map(item => {
@@ -40,43 +44,78 @@ function deleteElementChild(e){
 function closeContainer(){
     upload__container.style.display = "none";
     msg__div.innerText = "";
-    if(uploaded__file.files.length === 1){
-        uploaded__file.value = "";
-        deleteElementChild(files__name__div);
-        showFilesName(files__name__div, uploadedFilesName, 0);
+    uploaded__file.value = "";
+    showFilesName(files__name__div, uploadedFilesName, 0);
+}
+const wait = () => {
+    return new Promise((resolve) => {
+      setTimeout(() => resolve(), 1000);
+    });
+}
+const uploadFile = async (file, i) => {
+    await wait();
+    uploadedFilesName.push(file.name); 
+    showMsg(`Uploaded files number: ${i + 1}`);
+    await wait();
+    showMsg("");
+}
+Promise.all = (promisesArr) => {
+    const resolvedPromises = [];
+    let promiseCount = promisesArr.length;
+    return new Promise((resolve, reject) => {
+    if (promiseCount === 0) {
+      resolve(null);
+      return;
     }
-}
-function checkFile(files) {
-    return new Promise(((resolve, reject) => {
-        files.length !== 0 ? resolve(files) : reject(messages.error);
-    }));
-}
+    for (const promise of promisesArr) {
+      promise
+        .then((value) => {
+            resolvedPromises.push(value);
+          if (resolvedPromises.length === promiseCount) {
+            resolve(resolvedPromises);
+          }
+        })
+        .catch((e) => {
+          reject(e);
+        });
+    }
+  });
+};
+const uploadFiles = async (files) => {
+    try {
+      const fileToUpload = files.map((file, i) => uploadFile(file, i));
+      console.log(uploadFile)
+      await Promise.all(fileToUpload);
+      showMsg(messages.success);
+      await wait();
+      showMsg("");
+    } catch (e) {
+      showMsg(e, true);
+    }
+  }
 function events(){
     open__container.addEventListener('click', () => {
-        if(uploadedFilesName.length === 3){
-            index = 0;
-            uploadedFilesName = [];
-            msg__div.innerText = "";
-            deleteElementChild(files__name__div);
-        }
+        uploadedFilesName = [];
+        deleteElementChild(files__name__div);
         upload__container.style.display = "flex";
+        close__container.style.display = "none";
     });
     close__container.addEventListener('click', closeContainer);
     upload__file__btn.addEventListener('click', async () => {
-            await checkFile(uploaded__file.files)
-                .then((files) => {
-                    uploadedFilesName.push(files[0].name);
-                    msg__div.style.color = "green";
-                    msg__div.innerText = uploadedFilesName.length + " " + messages.success;
-                    if(uploadedFilesName.length === 3){
-                        closeContainer();
-                    }
-                })
-                .catch((msg) => {
-                   msg__div.style.color = "darkred";
-                   msg__div.innerText = msg;
-                });
+        if(uploaded__file.files.length === 0){
+            showMsg(messages.error, true);
+            await wait();
+            showMsg("");
+        }else{
+            let img = document.createElement('img');
+            img.src = './images/loading-gif.gif';
+            img.alt = 'Loading...';
+            msg__div.appendChild(img);
+            await uploadFiles(Object.values(uploaded__file.files));
+            if(uploadedFilesName.length >= 3){
+                close__container.style.display = "inline";
+            }
+        }
     });
 }
 events();
-

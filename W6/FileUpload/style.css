@@ -15,7 +15,6 @@ body{
     height: 500px;
     padding: 2%;
     border-radius: 10px;
-    
 }
 .header, .container__header{
     display: flex;
@@ -57,6 +56,9 @@ body{
     align-items: center;
     justify-content: center;
 }
+#close__container{
+    display: none;
+}
 .container{
     padding: 2%;
     width: 50%;
@@ -71,6 +73,11 @@ body{
 .msg{
     text-align: center;
     margin-bottom: 3%;
+    height: 30px;
+}
+.msg > img{
+    width: 40px;
+    height: 40px;
 }
 @media screen and (max-width: 640px){
     .warper{
@@ -88,5 +95,9 @@ body{
     }
     #file{
         margin-bottom: 10%;
+    }
+    .msg > img{
+        width: 25px;
+        height: 25px;
     }
 }

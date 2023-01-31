@@ -84,7 +84,6 @@ Promise.all = (promisesArr) => {
 const uploadFiles = async (files) => {
     try {
       const fileToUpload = files.map((file, i) => uploadFile(file, i));
-      console.log(uploadFile)
       await Promise.all(fileToUpload);
       showMsg(messages.success);
       await wait();

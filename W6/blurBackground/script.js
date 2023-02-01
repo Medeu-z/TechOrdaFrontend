@@ -49,9 +49,6 @@ function stopVideo(){
     stopBlur();
 }
 function startBlur(){
-    camera.style.display = "none";
-    canvas.style.display = "block";
-    setAttributes(blur_icon, blur_btn, 'bi bi-person-square', 'blur');
     bodyPix.load()
         .then(async net => {
             while (stop_img.style.display === 'none') {
@@ -61,6 +58,9 @@ function startBlur(){
             }
         })
         .catch(err => console.error(err));
+        camera.style.display = "none";
+        canvas.style.display = "block";
+        setAttributes(blur_icon, blur_btn, 'bi bi-person-square', 'blur');
 }
 function stopBlur(){
     camera.style.display = "block";

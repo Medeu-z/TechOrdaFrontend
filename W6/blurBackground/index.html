@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+    <title>Blur background</title>
+</head>
+<body>
+    <main>
+        <div class="wrapper">
+            <div  class="back__img"><i class="bi bi-camera-video-off-fill"></i></div>
+            <video id="camera" width="500" height="375"></video>
+            <canvas id="canvas"></canvas>
+        </div>
+        <div class="btns">
+            <button class="btn" id="controll" data-state="stop"><i class="bi bi-camera-video-fill"></i></button>
+            <button class="btn" id="blur" data-state="none" disabled><i class="bi bi-person-fill"></i></button>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/body-pix@2.0"></script>
+    <script src="script.js"></script>
+</body>
+</html>

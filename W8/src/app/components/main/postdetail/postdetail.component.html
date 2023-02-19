@@ -1,0 +1,27 @@
+<div class="post">
+    <div class="back__btn" (click)="onClickHandler()">
+        <i class="bi bi-arrow-left"></i> Back
+    </div>
+    <div class="card">
+        <div class="card__header">
+            <div class="user">
+                <i class="bi bi-person-circle"></i>
+                <div class="user__name">Author</div>
+            </div>
+            <div class="card__date">12.11.2022</div>
+        </div>
+        <div class="card__body">
+            <div class="card__title">{{post.title}}</div>
+            <p class="card__description">{{post.body}}</p>
+        </div>
+        <div class="comments">
+            <div class="comment" *ngFor="let comment of comments">
+                <div class="user">
+                    <i class="bi-person-circle"></i>
+                    <div class="user__name">{{comment.email}}</div>
+                </div>
+                <div class="text">{{comment.body}}</div>
+            </div>
+        </div>
+    </div>
+</div>

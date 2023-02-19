@@ -1,0 +1,17 @@
+<div class="pagination"><div class="active">1</div><div>2</div><div>3</div></div>
+<div class="card"  *ngFor="let post of posts">
+    <div class="card__header">
+        <div class="user">
+            <i class="bi-person-circle"></i>
+            <div class="user__name">Author</div>
+        </div>
+        <div class="card__date">12.11.2022</div>
+    </div>
+    <div class="card__body">
+        <div class="card__title">{{ post.title }}</div>
+    </div>
+    <div class="card__footer">
+        <button class="card__button" (click)="onClickHandler(post.id)">Read More</button>
+    </div>
+</div>
+

@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Permanent+Marker&display=swap');
+:root{
+    --primary-color: #344A72;
+    --secondary-color: #ffffff;
+    --accent-color:  #E5E5E5;
+    --primary-font-family: 'Montserrat', sans-serif;
+    --logo-font-family: 'Permanent Marker';
+}
+*{
+    font-family: var(--primary-font-family);
+    box-sizing: border-box;
+    transition: all 0.3s;
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: var(--accent-color);
+}
+header{
+    background-color: var(--primary-color);
+    width: 100%;
+}
+.wrapper{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+.logo{
+    font-size: 1.5rem;
+    font-family: var(--logo-font-family);
+    color: #ffffff;
+}
+header{
+    position: relative;
+    top: 0;
+    margin-bottom: 4vw;
+}
+.main{
+   margin: 0 auto 50px;
+   width: 50%;
+}
+.card{
+    width: 100%;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    margin: 0 0 5%;
+    padding: 5%;
+}
+.card__header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3%;
+    font-size: 1.5vw;
+}
+.user{
+    display: flex;
+}
+.user > i{
+    color: var(--primary-color);
+    margin-right: 5px;
+}
+.card__body{
+    margin-bottom: 5%;
+}
+.card__title{
+    font-size: 2vw;
+}
+.card__description{
+    font-size: 1.4vw;
+}
+.card__footer{
+    display: flex;
+    justify-content: end;
+}
+.card__button{
+    font-size: 1vw;
+    border: 0;
+    background: #344A72;
+    color: white;
+    padding: 1% 3%;
+    border-radius: 10px;
+}
+.back__btn{
+   width: 70px;
+   margin-bottom: 2%;
+   color: #344A72;
+   cursor: pointer;
+}
+.comments{
+    border-top: 0.5px solid lightgrey;
+    margin-top: 2%;
+}
+.comment{
+    padding: 3%;
+    width: 100%;
+    margin: 2% auto 3%;
+    font-size: 1vw;
+    background-color: rgba(211, 211, 211, 0.473);
+}
+.text{
+    font-size: 1.3vw;
+    margin-top: 1%;
+    margin-left: 3.5%;
+    color: #344A72;
+}
+.pagination{
+    display: flex;
+    justify-content: center;
+}
+.pagination div{
+    margin: 1%;
+    width: 10px;
+    cursor: pointer;
+    font-size: 1.3vw;
+}
+.active{
+    text-decoration: underline;
+    font-weight: bold;
+    color: rgb(0, 150, 176);
+}
+@media screen and (max-width: 700px){
+    .main{
+        width: 80%;
+    }
+    .content{
+        flex-direction: column;
+    }
+    .card__header, .pagination div{
+        font-size: 3vw;
+    }
+    .card__title, .back__btn{
+        font-size: 3.7vw;
+    }
+    .card__description, .comment, .text{
+        font-size: 2.5vw;
+    }
+    .text{
+        margin-left: 5%;
+    }
+}
